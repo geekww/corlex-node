@@ -1,33 +1,25 @@
 module.exports = function(sequelize, DataTypes) {
-    return sequelize.define("ur_position", {
+    return sequelize.define("tem_group", {
         id: {
             type: DataTypes.INTEGER,
             allowNull: false, //非空
             autoIncrement: true, //自动递增
             primaryKey: true //主键
         },
-        position: {
+        group: {
             type: DataTypes.STRING(20),
-            // field: "position",
             allowNull: false
         },
-        value: {
-            type: DataTypes.STRING(20),
-            // field: "position",
+        gid: {
+            type: DataTypes.STRING(5),
             allowNull: false
         },
     }, {
-        underscored: true, //额外字段以下划线来分割
-        // createdAt: "created_at",
-        // updatedAt: "updated_at",
-        timestamps: false, //取消默认生成的createdAt、updatedAt字段
-        freezeTableName: true, // Model 对应的表名将与model名相同
-        //静态方法，即user模型自带的方法
+        underscored: true,
+        timestamps: false,
+        freezeTableName: true,
         classMethods: classMethods,
         comment: "用户信息类",
-        // paranoid: true      //虚拟删除
-        //实例方法
-        // instanceMethods: instanceMethods
     });
 };
 
@@ -38,7 +30,7 @@ const classMethods = {
         return this.findById(id);
     },
     //获取所有
-    getAll: function(options) {
+    getPosition: function(options) {
         return this.findAll(options);
     },
     //根据id更新数据

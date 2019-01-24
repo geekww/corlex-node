@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
-    return sequelize.define("ur_position", {
-        id: {
+    return sequelize.define("tem_position", {
+        pid: {
             type: DataTypes.INTEGER,
             allowNull: false, //非空
             autoIncrement: true, //自动递增
@@ -8,12 +8,6 @@ module.exports = function(sequelize, DataTypes) {
         },
         position: {
             type: DataTypes.STRING(20),
-            // field: "position",
-            allowNull: false
-        },
-        value: {
-            type: DataTypes.STRING(20),
-            // field: "position",
             allowNull: false
         },
     }, {

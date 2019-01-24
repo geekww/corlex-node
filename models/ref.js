@@ -7,8 +7,9 @@ var Position = sequelize.import("./position");
 // var Role = sequelize.import("./role");
 
 //建立模型之间关联关系
-// User.hasOne(LoginInfo);
-// LoginInfo.belongsTo(User);
+// Position.belongsTo(User);
+User.belongsTo(Position, { foreignKey: 'position', as: 'info' });
+// User.hasOne(Position, { foreignKey: 'pid', as: 'info' });
 //
 // User.hasMany(Address, {
 //   foreignKey: 'user_id',

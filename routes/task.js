@@ -26,7 +26,8 @@ router.post('/addTask', function(req, res, next) {
         finish: req.body.finish,
         remark: req.body.remark,
     };
-    Project.create(Message).then(function () {
+    // 创建记录
+    Task.create(Message).then(function () {
         res.json({
             status: 1,
             msg: '创建成功'

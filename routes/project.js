@@ -26,6 +26,7 @@ router.post('/addProject', function(req, res, next) {
         date: req.body.date,
         remark: req.body.remark,
     };
+    // 创建记录
     Project.create(Message).then(function () {
         res.json({
             status: 1,

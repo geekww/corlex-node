@@ -18,4 +18,18 @@ router.all('/getPosition', function(req, res, next) {
     });
 });
 
+// 创建职位
+router.post('/addPosition', function(req, res, next) {
+    var Message = {
+        position: req.body.position,
+    };
+    // 创建记录
+    Position.create(Message).then(function () {
+        res.json({
+            status: 1,
+            msg: '创建成功'
+        });
+    }).catch(next);
+});
+
 module.exports = router;

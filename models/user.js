@@ -100,19 +100,19 @@ const classMethods = {
     getUsers: function(options) {
         return this.findAll(options);
     },
-    //根据id更新数据
-    updateUserById: function(values, id) {
+    //根据uid更新数据
+    updateUserByUid: function(values, id) {
         return this.update(values, {
             where: {
-                id: id
+                uid: id
             }
         });
     },
-    //根据id删除数据
-    deleteById: function(id) {
+    //根据uid删除数据
+    deleteByUid: function(id) {
         return this.destroy({
             where: {
-                id: id
+                uid: id
             }
         })
     }

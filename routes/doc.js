@@ -23,6 +23,7 @@ router.post('/saveDoc', function(req, res, next) {
         author: req.body.author,
         date: req.body.date,
     };
+    // 创建记录
     Doc.create(Message).then(function () {
         res.json({
             status: 1,
