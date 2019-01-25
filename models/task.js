@@ -7,7 +7,7 @@ module.exports = function(sequelize, DataTypes) {
             primaryKey: true //主键
         },
         name: {
-            type: DataTypes.STRING(50),
+            type: DataTypes.STRING(500),
             allowNull: false
         },
         pid: {
@@ -32,7 +32,11 @@ module.exports = function(sequelize, DataTypes) {
         },
         finish: {
             type: DataTypes.STRING(30),
-            allowNull: true
+            defaultValue: "未开始"
+        },
+        state: {
+            type: DataTypes.STRING(30),
+            defaultValue: "1"
         },
         remark: {
             type: DataTypes.STRING(1000),

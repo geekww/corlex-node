@@ -32,4 +32,14 @@ router.post('/addPosition', function(req, res, next) {
     }).catch(next);
 });
 
+// 删除职位
+router.post('/delPosition', function(req, res, next) {
+    Position.deleteByPid(req.body.pid).then(function(result) {
+        res.json({
+            status: 1,
+            msg: '已删除'
+        });
+    }).catch(next);
+});
+
 module.exports = router;

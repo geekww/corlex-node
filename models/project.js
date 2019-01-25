@@ -55,10 +55,10 @@ const classMethods = {
         });
     },
     //根据id删除数据
-    deleteById: function(id) {
+    deleteByPid: function(id) {
         return this.destroy({
             where: {
-                id: id
+                pid: id
             }
         })
     }
